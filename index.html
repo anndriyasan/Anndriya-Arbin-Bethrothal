@@ -1,76 +1,172 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f4efdf" />
-  <title>Anndriya & Arbin — Betrothal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e5">
+  <meta name="description" content="A little invitation to Anndriya Roselet San and Arbin Joy's Betrothal Ceremony, 2 January 2027 in Kelakam.">
+  <title>Anndriya &amp; Arbin — Betrothal Ceremony</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    :root { --ivory:#f4efdf; --cream:#fbf8ed; --green:#4d6047; --gold:#b79a5a; --ink:#314034; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:'Cormorant Garamond',Georgia,serif; color:var(--ink); background:var(--cream); }
-    .opening { position:fixed; inset:0; z-index:20; display:grid; place-items:center; overflow:hidden; background:radial-gradient(ellipse at center,#ebe4d2 0,#cfc5ac 100%); transition:opacity .8s,visibility .8s; }
-    .opening::before { content:""; position:absolute; inset:0; opacity:.2; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E"); pointer-events:none; }
-    .opening.open { opacity:0; visibility:hidden; }
-    .envelope { position:relative; width:min(82vw,520px); aspect-ratio:1.35; background:linear-gradient(145deg,#fffdf4,#eee6d0); border:1px solid #d5c9a9; border-radius:3px; box-shadow:0 28px 65px #514a3d55,0 0 0 8px #f4efdf44; cursor:pointer; }
-    .envelope::before { content:""; position:absolute; inset:12px; border:1px solid #caba91; pointer-events:none; }
-    .envelope::after { content:""; position:absolute; inset:0; background:linear-gradient(135deg,transparent 49.7%,#e7dec7 50%,transparent 50.5%),linear-gradient(225deg,transparent 49.7%,#eee6d2 50%,transparent 50.5%); pointer-events:none; }
-    .flap { position:absolute; inset:0; z-index:1; clip-path:polygon(0 0,100% 0,50% 62%); background:linear-gradient(160deg,#f8f3e5,#e8dfc7); transform-origin:top; transition:transform 1s cubic-bezier(.6,0,.2,1); filter:drop-shadow(0 2px 2px #8f805733); }
-    .opening.open .flap { transform:rotateX(180deg); }
-    .seal { position:absolute; z-index:2; left:50%; top:54%; width:92px; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 34% 28%,#e0d19a,#b39852 58%,#806632); color:#fff9e8; display:grid; place-items:center; border:6px double #d5c28a; box-shadow:0 5px 12px #0003,inset 0 0 8px #74602c66; }
-    .seal span { font-family:'Great Vibes',cursive; font-size:42px; line-height:1; text-shadow:0 1px 2px #725927; transform:translateY(-2px); }
-    .touch { position:absolute; bottom:-62px; width:100%; text-align:center; color:#fffdf2; font-size:14px; letter-spacing:3px; text-transform:uppercase; text-shadow:0 1px 5px #0009; }
-    .invite { min-height:100vh; background-color:#f8f4e8; background-image:radial-gradient(ellipse at 15% 10%,#a7a18422,transparent 35%),radial-gradient(ellipse at 85% 90%,#7280641c,transparent 38%); padding:60px 20px; text-align:center; overflow:hidden; }
-    .frame { position:relative; max-width:760px; margin:auto; min-height:calc(100vh - 120px); border:1px solid #aab09a; padding:70px 32px 58px; box-shadow:inset 0 0 35px #8e815312; }
-    .frame::before { content:""; position:absolute; inset:8px; border:1px solid #c7b88c; pointer-events:none; }
-    .vine { position:absolute; width:190px; height:250px; opacity:.45; }
-    .vine.top { top:-18px; left:-25px; }.vine.bottom { bottom:-18px; right:-25px; transform:rotate(180deg); }
-    .leaf { position:absolute; width:55px; height:25px; border:2px solid var(--green); border-radius:100% 0 100% 0; }
-    .leaf:nth-child(1){left:40px;top:20px}.leaf:nth-child(2){left:75px;top:55px;transform:rotate(35deg)}.leaf:nth-child(3){left:25px;top:85px;transform:rotate(-35deg)}.leaf:nth-child(4){left:92px;top:125px;transform:rotate(55deg)}.leaf:nth-child(5){left:45px;top:160px;transform:rotate(-20deg)}
-    .eyebrow { margin:0 0 18px; font-size:16px; letter-spacing:5px; text-transform:uppercase; color:#7c825d; }
-    h1 { margin:12px auto 8px; max-width:620px; font-family:'Great Vibes',cursive; font-size:clamp(50px,9vw,84px); line-height:1.08; font-weight:400; }
-    h1 em { display:block; margin:4px 0; color:var(--gold); font-size:.65em; font-style:normal; }
-    .ceremony { font-size:18px; letter-spacing:6px; text-transform:uppercase; }
-    .divider { display:flex; align-items:center; gap:14px; max-width:320px; margin:28px auto; color:var(--gold); }
-    .divider::before,.divider::after { content:""; height:1px; flex:1; background:#b9b39a; }
-    .details { max-width:500px; margin:auto; }.date { font-size:25px; letter-spacing:2px; }.time { margin:8px 0 24px; font-size:20px; }
-    .place { margin:18px auto; }.place strong { display:block; font-size:18px; letter-spacing:2px; text-transform:uppercase; }.place span { display:block; margin-top:5px; font-size:19px; font-style:italic; }
-    .footer { margin-top:34px; font-size:15px; letter-spacing:3px; color:#777c66; text-transform:uppercase; }
-    @media (max-height:650px) { .frame { padding-top:45px; padding-bottom:35px; } h1{font-size:58px} }
+    :root{--paper:#f6f1e5;--paper-deep:#ebe2ce;--ink:#333e31;--green:#53684d;--green-dark:#354a39;--sage:#a1a78c;--gold:#af9252;--line:#c8bd9e;--serif:'Cormorant Garamond',Georgia,serif;--script:'Great Vibes',cursive}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:19px}body.locked{overflow:hidden}a{color:inherit}button{font:inherit}::selection{background:#d9c99e;color:var(--green-dark)}
+    .grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E")}
+    #petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.56}
+    .opening{position:fixed;inset:0;z-index:20;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#eee8d7 0,#d8d0bc 72%,#c9bea5 100%);transition:opacity .9s,visibility .9s}.opening::before,.opening::after{content:"";position:absolute;pointer-events:none}.opening::before{inset:22px;border:1px solid #aa986c}.opening::after{inset:30px;border:1px solid #eee6d4}.opening.is-opening{opacity:0;visibility:hidden}.envelope-wrap{position:relative;width:min(84vw,570px);perspective:1000px;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}.envelope-wrap.zoom{transform:scale(1.08) translateY(-10px)}.envelope{position:relative;aspect-ratio:1.48;background:linear-gradient(145deg,#fffdf5,#ece3cf);border:1px solid #c9bc9c;box-shadow:0 28px 70px #514a3d45,0 0 0 10px #f4efdf55;cursor:pointer;isolation:isolate}.envelope:before{content:"";position:absolute;inset:13px;border:1px solid #c8b88f;z-index:3;pointer-events:none}.envelope:after{content:"";position:absolute;inset:0;background:linear-gradient(32deg,transparent 49.6%,#e4dac3 50%,transparent 50.7%),linear-gradient(-32deg,transparent 49.6%,#eee5d2 50%,transparent 50.7%);z-index:0;pointer-events:none}.flap{position:absolute;inset:0;z-index:2;clip-path:polygon(0 0,100% 0,50% 62%);background:linear-gradient(160deg,#fbf7eb,#e7dcc3);transform-origin:top;transition:transform 1s .35s cubic-bezier(.55,.05,.2,1);filter:drop-shadow(0 3px 4px #7f71502b)}.envelope.open .flap{transform:rotateX(180deg)}.seal{position:absolute;z-index:4;left:50%;top:54%;width:92px;height:92px;display:grid;place-items:center;transform:translate(-50%,-50%);border-radius:50%;border:6px double #d7c58e;background:radial-gradient(circle at 34% 27%,#e4d59e,#b39752 60%,#806632);color:#fff8e4;box-shadow:0 5px 13px #0003,inset 0 0 9px #74602c66;transition:transform .4s,opacity .4s}.seal span{font-family:var(--script);font-size:43px;line-height:1;text-shadow:0 1px 2px #725927;transform:translateY(-2px)}.envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.5)}.open-prompt{position:absolute;left:0;right:0;bottom:-67px;color:#fffdf1;text-align:center;text-transform:uppercase;letter-spacing:4px;font:500 13px var(--serif);text-shadow:0 2px 6px #514a3d}.open-prompt span{display:block;font:25px var(--script);letter-spacing:1px;text-transform:none;margin-bottom:4px}
+    .site-header{position:sticky;top:0;z-index:10;background:#f6f1e5eb;backdrop-filter:blur(12px);border-bottom:1px solid #c8bd9e80}.nav{max-width:1120px;margin:auto;padding:11px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:30px var(--script);color:var(--green-dark);text-decoration:none;white-space:nowrap}.nav-links{display:flex;gap:25px;align-items:center}.nav-links a{font-size:15px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none}.nav-links a:hover{color:var(--gold)}.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--green-dark);padding:5px 11px}
+    main{position:relative;z-index:1}.hero{min-height:calc(100vh - 58px);display:grid;place-items:center;text-align:center;padding:74px 20px 82px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#fffdf4b8,transparent 66%)}.hero-frame{width:min(100%,850px);padding:72px 28px 60px;position:relative;border:1px solid var(--sage)}.hero-frame:before{content:"";position:absolute;inset:9px;border:1px solid var(--line);pointer-events:none}.overline,.eyebrow{text-transform:uppercase;letter-spacing:5px;color:#747b5e;font-size:15px}.hero h1{margin:20px auto 10px;display:flex;flex-direction:column;align-items:center;font:clamp(60px,10vw,112px)/.93 var(--script);color:var(--green-dark)}.hero h1 .amp{font-size:.62em;color:var(--gold);line-height:1.08}.hero-title{margin:19px 0 0;font-size:17px;letter-spacing:7px;text-transform:uppercase}.ornament{display:flex;align-items:center;gap:16px;max-width:340px;margin:26px auto;color:var(--gold);font-size:25px}.ornament:before,.ornament:after{content:"";height:1px;flex:1;background:var(--line)}.hero-date{font-size:25px;letter-spacing:2px}.hero-time{margin:7px 0 25px;font-size:21px}.hero-location{font-style:italic;font-size:21px;line-height:1.3}.scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#7a8067;text-decoration:none}.scroll-cue:after{content:'↓';display:block;font-size:21px;margin-top:3px}
+    .section{padding:90px 22px;position:relative}.section-inner{max-width:1000px;margin:0 auto}.section-heading{text-align:center;margin:0 0 42px}.section-heading .eyebrow{margin:0 0 8px}.section-heading h2{margin:0;color:var(--green-dark);font:clamp(42px,7vw,68px)/1.05 var(--script)}.section-heading p{margin:9px 0 0;font-size:18px;font-style:italic;color:#6b705c}.countdown-section{background:#e8e5d7;text-align:center}.countdown{display:flex;justify-content:center;gap:clamp(16px,5vw,55px);flex-wrap:wrap}.count-unit{min-width:80px}.count-unit strong{display:block;color:var(--green-dark);font:clamp(42px,7vw,64px)/1 var(--serif);font-weight:400}.count-unit span{display:block;margin-top:8px;color:#78795f;font-size:13px;letter-spacing:3px;text-transform:uppercase}.countdown-note{margin:23px 0 0;font-size:16px;font-style:italic;color:#666c55}
+    .details-section{background:#f8f4e9}.event-card{max-width:770px;margin:auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--sage);background:#fbf8ef;box-shadow:0 15px 40px #514a3d0d}.event{padding:36px 36px 34px;text-align:center}.event+ .event{border-left:1px solid var(--line)}.event-icon{color:var(--gold);font-size:27px}.event h3{margin:8px 0 5px;color:var(--green-dark);font:40px var(--script)}.event-time{font-size:20px;letter-spacing:1px}.event-place{min-height:52px;margin:14px 0 17px;font-size:19px;line-height:1.25;font-style:italic}.map-link,.action-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--green);padding:10px 17px;color:var(--green-dark);background:transparent;text-decoration:none;text-transform:uppercase;letter-spacing:1.5px;font:500 13px var(--serif);transition:background .2s,color .2s;cursor:pointer}.map-link:hover,.action-button:hover{background:var(--green);color:#fff}.reception-note{text-align:center;margin:26px 0 0;font-size:19px;font-style:italic;color:#72765e}
+    .closing{padding:85px 20px 92px;text-align:center;background:linear-gradient(#e9e4d5,#e3dfd0)}.closing .script{font:clamp(42px,8vw,72px) var(--script);color:var(--green-dark);margin:0}.closing p{margin:12px 0 24px;font-size:18px}.action-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.footer{text-align:center;padding:18px;color:#77765f;font-size:14px;letter-spacing:2px;background:#ddd9ca}
+    [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}[data-reveal].visible{opacity:1;transform:none}.leaf-spray{position:absolute;width:135px;height:180px;opacity:.36;pointer-events:none}.leaf-spray.left{top:0;left:0}.leaf-spray.right{bottom:0;right:0;transform:rotate(180deg)}.leaf-spray i{position:absolute;width:49px;height:24px;border:1.5px solid var(--green);border-radius:100% 0 100% 0}.leaf-spray i:nth-child(1){left:19px;top:13px;transform:rotate(15deg)}.leaf-spray i:nth-child(2){left:50px;top:43px;transform:rotate(55deg)}.leaf-spray i:nth-child(3){left:12px;top:73px;transform:rotate(-25deg)}.leaf-spray i:nth-child(4){left:63px;top:103px;transform:rotate(40deg)}.leaf-spray i:nth-child(5){left:25px;top:133px;transform:rotate(-12deg)}
+    @media(max-width:680px){.nav{padding:9px 17px}.brand{font-size:27px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;padding:16px 22px 20px;background:#f6f1e5f7;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.nav-links.open{display:flex}.hero{min-height:calc(100svh - 52px);padding:48px 17px 72px}.hero-frame{padding:55px 17px 45px}.hero h1{font-size:clamp(57px,15vw,86px)}.overline,.eyebrow{font-size:12px;letter-spacing:3px}.hero-title{font-size:14px;letter-spacing:4px}.section{padding:68px 17px}.event-card{grid-template-columns:1fr}.event{padding:30px 21px}.event+.event{border-left:0;border-top:1px solid var(--line)}.event-place{min-height:0}.leaf-spray{transform:scale(.75);transform-origin:top left}.leaf-spray.right{transform:rotate(180deg) scale(.75);transform-origin:bottom right}.seal{width:78px;height:78px}.seal span{font-size:37px}.opening:before{inset:12px}.opening:after{inset:19px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}#petals{display:none}[data-reveal]{opacity:1;transform:none}}
   </style>
 </head>
-<body>
+<body class="locked">
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <section class="opening" id="opening-screen" aria-label="Invitation envelope">
+    <div class="envelope-wrap" id="envelope-viewport">
+      <button class="envelope" id="btn-open-envelope" type="button" aria-label="Open Anndriya and Arbin's invitation">
+        <span class="flap" aria-hidden="true"></span><span class="seal" id="wax-seal" aria-hidden="true"><span>A&amp;A</span></span>
+      </button>
+      <div class="open-prompt"><span>A little invitation to a very special day</span>Touch to open</div>
+    </div>
+  </section>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">Anndriya &amp; Arbin</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" type="button">Menu</button>
+      <div class="nav-links" id="nav-links"><a href="#celebration">Celebration</a><a href="#details">The Details</a><a href="#closing">With love</a></div>
+    </nav>
+  </header>
   <main>
-    <section class="opening" id="opening" role="button" tabindex="0" aria-label="Open invitation">
-      <div class="envelope"><div class="flap"></div><div class="seal"><span>A&amp;A</span></div><div class="touch">Touch to open</div></div>
+    <section class="hero" id="home">
+      <div class="hero-frame" data-reveal>
+        <div class="leaf-spray left" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="leaf-spray right" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="overline">Together with their families</p>
+        <h1><span id="bride-name">Anndriya Roselet San</span><span class="amp">&amp;</span><span id="groom-name">Arbin Joy</span></h1>
+        <p class="hero-title">Betrothal Ceremony</p>
+        <div class="ornament" aria-hidden="true">❧</div>
+        <div class="hero-date" id="hero-date">Saturday, 2 January 2027</div>
+        <div class="hero-time" id="hero-time">4:30 PM</div>
+        <div class="hero-location">San Jose Church<br>Kelakam</div>
+      </div>
+      <a class="scroll-cue" href="#celebration">Scroll to explore</a>
     </section>
-    <section class="invite">
-      <div class="frame">
-        <div class="vine top" aria-hidden="true"><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
-        <div class="vine bottom" aria-hidden="true"><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
-        <p class="eyebrow">Together with their families</p>
-        <h1>Anndriya Roselet San <em>&amp;</em> Arbin Joy</h1>
-        <p class="ceremony">Betrothal Ceremony</p>
-        <div class="divider">❧</div>
-        <div class="details">
-          <div class="date">02 January 2027</div>
-          <div class="time">Saturday · 4:30 PM</div>
-          <div class="place"><strong>Ceremony</strong><span>San Jose Church<br>Kelakam</span></div>
-          <div class="place"><strong>Reception to Follow</strong><span>St. George Convention Centre<br>Kelakam</span></div>
-        </div>
-        <p class="footer">With love &amp; joy</p>
+    <section class="section countdown-section" id="celebration">
+      <div class="section-inner" data-reveal>
+        <div class="section-heading"><p class="eyebrow">A day to remember</p><h2>Counting the moments</h2><p>Until we celebrate together</p></div>
+        <div class="countdown" id="countdown" aria-label="Countdown to the betrothal ceremony">
+          <div class="count-unit"><strong id="days">—</strong><span>Days</span></div><div class="count-unit"><strong id="hours">—</strong><span>Hours</span></div><div class="count-unit"><strong id="minutes">—</strong><span>Minutes</span></div><div class="count-unit"><strong id="seconds">—</strong><span>Seconds</span></div>
+        </div><p class="countdown-note" id="countdown-message" aria-live="polite">We can't wait to celebrate with you.</p>
       </div>
     </section>
+    <section class="section details-section" id="details">
+      <div class="section-inner" data-reveal>
+        <div class="section-heading"><p class="eyebrow">Please join us</p><h2>The celebration</h2><p>Saturday, 2 January 2027</p></div>
+        <div class="event-card">
+          <article class="event"><div class="event-icon" aria-hidden="true">❧</div><h3>The Ceremony</h3><div class="event-time">4:30 PM</div><p class="event-place">San Jose Church<br>Kelakam</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=San+Jose+Church+Kelakam" target="_blank" rel="noopener noreferrer">View location <span aria-hidden="true">↗</span></a></article>
+          <article class="event"><div class="event-icon" aria-hidden="true">✧</div><h3>Reception</h3><div class="event-time">To follow</div><p class="event-place">St. George Convention Centre<br>Kelakam</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=St+George+Convention+Centre+Kelakam" target="_blank" rel="noopener noreferrer">View location <span aria-hidden="true">↗</span></a></article>
+        </div>
+        <p class="reception-note">Your presence will make our day all the more special.</p>
+      </div>
+    </section>
+    <section class="closing" id="closing" data-reveal>
+      <p class="script">With love &amp; joy</p><p>We look forward to celebrating this beautiful beginning with you.</p>
+      <div class="action-row"><button class="action-button" id="calendar-button" type="button">Add to calendar</button><button class="action-button" id="share-button" type="button">Share invitation</button></div>
+    </section>
   </main>
+  <footer class="footer">ANNDriya ROSELET SAN &amp; ARBIN JOY · 02.01.2027</footer>
   <script>
-    const opening=document.getElementById('opening');
-    function openInvitation(){ opening.classList.add('open'); setTimeout(()=>opening.style.display='none',800); }
-    opening.addEventListener('click',openInvitation);
-    opening.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openInvitation();});
+    'use strict';
+    // All invitation details are collected here for easy future edits.
+    const BETROTHAL = {
+      bride: 'Anndriya Roselet San', groom: 'Arbin Joy',
+      dateLabel: 'Saturday, 2 January 2027', date: '2027-01-02T16:30:00+05:30',
+      time: '4:30 PM', ceremony: 'San Jose Church, Kelakam',
+      reception: 'St. George Convention Centre, Kelakam'
+    };
+    const openingScreen = document.getElementById('opening-screen');
+    const envelope = document.getElementById('btn-open-envelope');
+    const envelopeViewport = document.getElementById('envelope-viewport');
+    let opened = false;
+    function openInvitation() {
+      if (opened) return;
+      opened = true;
+      envelope.disabled = true;
+      envelope.classList.add('open');
+      envelopeViewport.classList.add('zoom');
+      window.setTimeout(() => {
+        openingScreen.classList.add('is-opening');
+        document.body.classList.remove('locked');
+      }, 1050);
+      window.setTimeout(() => openingScreen.remove(), 2050);
+    }
+    envelope.addEventListener('click', openInvitation);
+
+    // Countdown uses the ceremony's stated local time in Kelakam, India (IST).
+    const target = new Date(BETROTHAL.date).getTime();
+    const countdownMessage = document.getElementById('countdown-message');
+    function updateCountdown() {
+      const remaining = target - Date.now();
+      if (remaining <= 0) {
+        document.getElementById('countdown').hidden = true;
+        countdownMessage.textContent = 'Today is the day! We can’t wait to celebrate with you.';
+        return;
+      }
+      document.getElementById('days').textContent = String(Math.floor(remaining / 86400000)).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor(remaining % 86400000 / 3600000)).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.floor(remaining % 3600000 / 60000)).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.floor(remaining % 60000 / 1000)).padStart(2, '0');
+    }
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+
+    // Save the ceremony to a calendar using the details above.
+    document.getElementById('calendar-button').addEventListener('click', () => {
+      const start = '20270102T110000Z'; // 4:30 PM IST
+      const end = '20270102T120000Z';
+      const escapeICS = value => value.replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;').replace(/\n/g, '\\n');
+      const content = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Anndriya and Arbin//Betrothal Invitation//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT',`UID:anndriya-arbin-betrothal-20270102@invitation`,`DTSTAMP:${new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}`,`DTSTART:${start}`,`DTEND:${end}`,`SUMMARY:${escapeICS('Betrothal Ceremony — Anndriya & Arbin')}`,`LOCATION:${escapeICS(BETROTHAL.ceremony)}`,`DESCRIPTION:${escapeICS('Reception to follow at ' + BETROTHAL.reception)}`,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+      const url = URL.createObjectURL(new Blob([content], {type:'text/calendar;charset=utf-8'}));
+      const link = document.createElement('a'); link.href = url; link.download = 'Anndriya-Arbin-Betrothal.ics'; link.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+    document.getElementById('share-button').addEventListener('click', async event => {
+      const shareData = {title:'Anndriya & Arbin — Betrothal Ceremony', text:`Join us for ${BETROTHAL.bride} & ${BETROTHAL.groom}'s Betrothal Ceremony on ${BETROTHAL.dateLabel} at ${BETROTHAL.ceremony}. Reception to follow at ${BETROTHAL.reception}.`, url:location.href};
+      const button = event.currentTarget;
+      try {
+        if (navigator.share) await navigator.share(shareData);
+        else if (navigator.clipboard) { await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`); button.textContent = 'Invitation copied!'; window.setTimeout(() => button.textContent = 'Share invitation', 2200); }
+      } catch (error) { if (error.name !== 'AbortError') button.textContent = 'Unable to share'; }
+    });
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => { const expanded = menuToggle.getAttribute('aria-expanded') === 'true'; menuToggle.setAttribute('aria-expanded', String(!expanded)); navLinks.classList.toggle('open', !expanded); });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); }));
+
+    // Reveal sections gently as they enter view.
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold:.12});
+      revealItems.forEach(item => observer.observe(item));
+    } else revealItems.forEach(item => item.classList.add('visible'));
+
+    // A restrained drift of vintage rose petals; disabled for reduced-motion preferences.
+    const canvas = document.getElementById('petals');
+    const context = canvas.getContext('2d');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion) {
+      let width = 0, height = 0, frame = 0;
+      const petals = Array.from({length: innerWidth < 700 ? 11 : 19}, () => ({x:Math.random()*innerWidth,y:Math.random()*innerHeight,size:Math.random()*5+3,speed:Math.random()*.35+.12,sway:Math.random()*Math.PI*2,alpha:Math.random()*.35+.15}));
+      function resizeCanvas(){const ratio=Math.min(devicePixelRatio||1,2);width=innerWidth;height=innerHeight;canvas.width=width*ratio;canvas.height=height*ratio;context.setTransform(ratio,0,0,ratio,0,0)}
+      function drawPetals(){context.clearRect(0,0,width,height);for(const petal of petals){petal.y+=petal.speed;petal.sway+=.009;petal.x+=Math.sin(petal.sway)*.3;if(petal.y>height+14){petal.y=-14;petal.x=Math.random()*width}context.save();context.translate(petal.x,petal.y);context.rotate(Math.sin(petal.sway)*.4);context.globalAlpha=petal.alpha;context.fillStyle='#9b5960';context.beginPath();context.ellipse(0,0,petal.size*.62,petal.size,0,0,Math.PI*2);context.fill();context.restore()}frame=requestAnimationFrame(drawPetals)}
+      resizeCanvas();drawPetals();window.addEventListener('resize',resizeCanvas,{passive:true});document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(frame);else drawPetals()});
+    }
   </script>
 </body>
 </html>
