@@ -12,21 +12,19 @@
     body { margin:0; font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--cream); }
     .opening { position:fixed; inset:0; z-index:20; display:grid; place-items:center; overflow:hidden; background:#d8d4c5; transition:opacity .8s, visibility .8s; }
     .opening.open { opacity:0; visibility:hidden; }
-    .opening::before,.opening::after { content:""; position:absolute; inset:0; pointer-events:none; }
-    .opening::before { background:linear-gradient(135deg,#cabfa3 0 49.8%,transparent 50%),linear-gradient(225deg,#d5ccb2 0 49.8%,transparent 50%); opacity:.75; }
+    .opening::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg,#cabfa3 0 49.8%,transparent 50%),linear-gradient(225deg,#d5ccb2 0 49.8%,transparent 50%); opacity:.75; }
     .envelope { position:relative; width:min(82vw,520px); aspect-ratio:1.35; background:var(--ivory); border-radius:8px; box-shadow:0 25px 60px #5d594b55; cursor:pointer; }
     .flap { position:absolute; inset:0; clip-path:polygon(0 0,100% 0,50% 62%); background:#eee7d1; transform-origin:top; transition:transform 1s cubic-bezier(.6,0,.2,1); }
     .opening.open .flap { transform:rotateX(180deg); }
     .seal { position:absolute; z-index:2; left:50%; top:54%; width:88px; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; background:radial-gradient(circle at 35% 30%,#dccd91,#b39852 55%,#8e7438); color:white; display:grid; place-items:center; border:7px double #d8c58e; box-shadow:0 5px 12px #0003; font-size:29px; letter-spacing:-3px; }
     .seal span { transform:translateX(-2px); }
     .touch { position:absolute; bottom:-62px; width:100%; text-align:center; color:#fff; font-size:13px; letter-spacing:3px; text-transform:uppercase; text-shadow:0 1px 5px #0008; }
-    .invite { min-height:100vh; background:linear-gradient(rgba(251,248,237,.92),rgba(251,248,237,.92)),radial-gradient(circle at 20% 20%,#8b9a7b 0 2px,transparent 3px); background-size:auto,24px 24px; padding:60px 20px; text-align:center; overflow:hidden; }
+    .invite { min-height:100vh; background:rgba(251,248,237,.92); padding:60px 20px; text-align:center; overflow:hidden; }
     .frame { position:relative; max-width:760px; margin:auto; min-height:calc(100vh - 120px); border:1px solid #aab09a; padding:70px 32px 58px; }
     .frame::before { content:""; position:absolute; inset:8px; border:1px solid #c7b88c; pointer-events:none; }
     .vine { position:absolute; width:190px; height:250px; opacity:.45; }
-    .vine.top { top:-18px; left:-25px; }
-    .vine.bottom { bottom:-18px; right:-25px; transform:rotate(180deg); }
-    .leaf { position:absolute; width:55px; height:25px; border:2px solid var(--green); border-radius:100% 0 100% 0; transform-origin:right center; }
+    .vine.top { top:-18px; left:-25px; }.vine.bottom { bottom:-18px; right:-25px; transform:rotate(180deg); }
+    .leaf { position:absolute; width:55px; height:25px; border:2px solid var(--green); border-radius:100% 0 100% 0; }
     .leaf:nth-child(1){left:40px;top:20px}.leaf:nth-child(2){left:75px;top:55px;transform:rotate(35deg)}.leaf:nth-child(3){left:25px;top:85px;transform:rotate(-35deg)}.leaf:nth-child(4){left:92px;top:125px;transform:rotate(55deg)}.leaf:nth-child(5){left:45px;top:160px;transform:rotate(-20deg)}
     .eyebrow { margin:0 0 18px; font-size:12px; letter-spacing:5px; text-transform:uppercase; color:#7c825d; }
     h1 { margin:12px auto 8px; max-width:620px; font-size:clamp(43px,8vw,78px); line-height:.95; font-weight:400; }
@@ -34,8 +32,7 @@
     .ceremony { font-size:14px; letter-spacing:6px; text-transform:uppercase; }
     .divider { display:flex; align-items:center; gap:14px; max-width:320px; margin:28px auto; color:var(--gold); }
     .divider::before,.divider::after { content:""; height:1px; flex:1; background:#b9b39a; }
-    .details { max-width:500px; margin:auto; }
-    .date { font-size:22px; letter-spacing:2px; }.time { margin:8px 0 24px; font-size:17px; }
+    .details { max-width:500px; margin:auto; }.date { font-size:22px; letter-spacing:2px; }.time { margin:8px 0 24px; font-size:17px; }
     .place { margin:18px auto; }.place strong { display:block; font-size:16px; letter-spacing:2px; text-transform:uppercase; }.place span { display:block; margin-top:5px; font-size:15px; font-style:italic; }
     .footer { margin-top:34px; font-size:12px; letter-spacing:3px; color:#777c66; text-transform:uppercase; }
     @media (max-height:650px) { .frame { padding-top:45px; padding-bottom:35px; } h1{font-size:46px} }
@@ -51,7 +48,7 @@
         <div class="vine top" aria-hidden="true"><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
         <div class="vine bottom" aria-hidden="true"><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i><i class="leaf"></i></div>
         <p class="eyebrow">Together with their families</p>
-        <h1>Anndriya Roselet San <em>&</em> Arbin Joy</h1>
+        <h1>Anndriya Roselet San <em>&amp;</em> Arbin Joy</h1>
         <p class="ceremony">Betrothal Ceremony</p>
         <div class="divider">❧</div>
         <div class="details">
@@ -60,7 +57,7 @@
           <div class="place"><strong>Ceremony</strong><span>San Jose Church<br>Kelakam</span></div>
           <div class="place"><strong>Reception to Follow</strong><span>St. George Convention Centre<br>Kelakam</span></div>
         </div>
-        <p class="footer">With love & joy</p>
+        <p class="footer">With love &amp; joy</p>
       </div>
     </section>
   </main>
